@@ -5,7 +5,7 @@ import logo from '../../../Assest/logo/logo.svg.jpg'
 
 const Header = () => {
     return (
-        <div className="navbar h-20 mb-12 bg-base-100">
+        <div className="navbar h-20 mb-12 pt-12 bg-base-100">
             <div className="flex-1 ">
 
                 <img className='w-20' src={logo} alt=''></img>
@@ -17,15 +17,15 @@ const Header = () => {
 
             <div className="flex-none">
                 <ul className="menu menu-horizontal p-0">
-                    <li><a>Home</a></li>
+                    <li><a href='/' className='font-semibold'>Home</a></li>
                     <li>
-                        <a>
+                        <a href='/' className='font-semibold'>
                             Parent
 
                         </a>
 
                     </li>
-                    <li><a>Item 3</a></li>
+                    <li><a href='/' className='font-semibold'>Item 3</a></li>
                 </ul>
             </div>
         </div>

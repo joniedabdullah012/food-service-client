@@ -7,7 +7,7 @@ const Footer = () => {
             <div>
                 <img className='w-40 rounded-full ' src={logo} alt=''></img>
 
-                <p>Food Services.<br />Providing reliable tech</p>
+                <p className='font-semibold'>Food Services.<br />Providing reliable tech</p>
             </div>
             <div>
                 <span className="footer-title">Social</span>
