@@ -14,7 +14,7 @@ const Login = () => {
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <h1 className=" p-5 text-3xl font-bold">Login now!</h1>
 
-                    <from onSubmit={handleLogin} className="card-body">
+                    <form onSubmit={handleLogin} className="card-body">
 
                         <div className="form-control">
                             <label className="label">
@@ -35,7 +35,7 @@ const Login = () => {
                             <input className="btn btn-primary" type="submit" value="login" />
 
                         </div>
-                    </from>
+                    </form>
                     <p className='p-5 text-violet-400 font-bold'>Add your Review? please <Link to='/signup'>Sign up</Link></p>
                 </div>
             </div>
