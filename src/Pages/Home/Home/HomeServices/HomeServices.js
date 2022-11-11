@@ -5,13 +5,13 @@ import ServicesCard from '../../../Shared/servicesCard/servicesCard';
 const HomeServices = () => {
     const [services, setServices] = useState([]);
     useEffect(() => {
-        fetch('fakedata.json')
+        fetch('http://localhost:5000/homeservices')
             .then(res => res.json())
             .then(data => setServices(data))
     })
     return (
         <div className='text-center'>
-            <p className="text-3xl font-bold text-violet- p-5 ">Services</p>
+            <p className="text-3xl font-bold text-orange-600 p-5 ">Services</p>
 
             <div className='grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
 
