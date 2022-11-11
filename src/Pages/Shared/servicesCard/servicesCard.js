@@ -1,14 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const ServicesCard = () => {
+const ServicesCard = ({ service }) => {
+
+    const { img, description, _id, title } = service;
     return (
-        <div className="card w-96 bg-base-100 shadow-xl">
-            <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+        <div className="card  bg-base-100 shadow-xl">
+            <figure><img className='w-64 h-32' src={img} alt="Shoes" /></figure>
             <div className="card-body">
-                <h2 className="card-title">Shoes!</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
+                <h2 className="card-title">{title}</h2>
+                <p>{description.slice(0, 100) + '....Readmore'}</p>
                 <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Buy Now</button>
+                    <Link to='/'>
+                        <button className="btn btn-primary">Details</button>
+                    </Link>
                 </div>
             </div>
         </div>

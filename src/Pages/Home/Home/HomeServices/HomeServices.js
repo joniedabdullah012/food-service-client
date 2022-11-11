@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import ServicesCard from '../servicesCard/servicesCard';
+import ServicesCard from '../../../Shared/servicesCard/servicesCard';
 
-const Services = () => {
+const HomeServices = () => {
     const [services, setServices] = useState([]);
     useEffect(() => {
         fetch('fakedata.json')
@@ -24,13 +24,17 @@ const Services = () => {
                 }
             </div>
 
+            <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg m-6">
 
+                <Link to='/services'>See All Services</Link>
+            </button>
 
 
 
 
         </div>
     );
+
 };
 
-export default Services;
+export default HomeServices;
