@@ -1,27 +1,88 @@
 import React, { useContext } from 'react';
+import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../context/authprovider/AuthProvider';
+import toast, { Toaster } from 'react-hot-toast';
 
 const ReviewsForm = () => {
+    const { _id, title, price } = useLoaderData()
+
+
     const { user } = useContext(AuthContext);
+    console.log(user);
+
+    const handleReviewAdd = event => {
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const email = user?.email || 'unregistraded';
+        const photoUrl = form.photoUrl.value;
+        const textArea = form.textArea.value;
+        console.log(name, email, photoUrl, textArea);
+
+        const review = {
+            services: _id,
+            serviceName: title,
+            price,
+
+            reviewName: name,
+            email,
+            photoUrl,
+            textArea
+
+
+
+
+        }
+
+
+
+        fetch('http://localhost:5000/reviews', {
+
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(review)
+
+        })
+            .then(res => res.json())
+            .then(data => {
+
+                console.log(data)
+                if (data.acknowledged) {
+                    toast.success('Successfully created!');
+
+                    form.reset();
+
+                }
+
+            })
+            .catch(err => console.err(err))
+
+
+    }
     return (
         <div className='p-5'>
+            <Toaster></Toaster>
             <h2 className='text-center text-4xl p-4 text-violet-400'>Please add your review</h2>
-            <form>
+            <form onSubmit={handleReviewAdd}>
 
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-5'>
-                    <input type="text" placeholder="Your Name" className="input input-bordered w-full " defaultValue={user?.displayName} />
-                    <input type="text" placeholder="PHOTO URL" className="input input-bordered w-full " defaultValue={user?.photoURL
-                    } />
-                    <input type="email" placeholder="email" defaultValue={user?.email} className="input input-bordered w-full " readOnly />
+                    <input name="name" defaultValue={user?.displayName} type="text" placeholder="Your Name" className="input input-bordered w-full " required />
+
+                    <input name="photoUrl" type="text" placeholder="PHOTO URL" className="input input-bordered w-full " defaultChecked={user?.photoURL
+                    } required />
+
+                    <input name="email" type="email" placeholder="email" defaultValue={user?.email} className="input input-bordered w-full " readOnly required />
 
 
                 </div>
 
                 <div className='p-4'>
-                    <textarea className="textarea textarea-info h-24 w-full" placeholder="Write your Review"></textarea>
+                    <textarea name='textArea' className="textarea textarea-info h-24 w-full" placeholder="Write your Review" required></textarea>
                 </div>
 
-
+                <input className=" btn " type="submit" value="add your review " />
 
             </form>
         </div>

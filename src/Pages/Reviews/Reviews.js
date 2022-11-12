@@ -2,8 +2,19 @@
 import { Link, useLoaderData } from 'react-router-dom';
 import ReviewsForm from '../ReviewsForm/ReviewsForm';
 
+
+
+
+
 const Reviews = () => {
-    const { title, img, description, price } = useLoaderData()
+    const { _id, title, img, description, price } = useLoaderData()
+
+
+
+
+
+
+
     return (
         <div>
             <div className="card w-96 bg-base-100 shadow-xl">
@@ -14,9 +25,13 @@ const Reviews = () => {
                     <p>{description}</p>
 
                 </div>
+
+                <ReviewsForm></ReviewsForm>
             </div>
 
-            <ReviewsForm></ReviewsForm>
+
+
+
 
 
 
