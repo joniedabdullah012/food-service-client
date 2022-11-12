@@ -1,5 +1,6 @@
 
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
+import ReviewsForm from '../ReviewsForm/ReviewsForm';
 
 const Reviews = () => {
     const { title, img, description, price } = useLoaderData()
@@ -14,6 +15,12 @@ const Reviews = () => {
 
                 </div>
             </div>
+
+            <ReviewsForm></ReviewsForm>
+
+
+
+
 
 
         </div>
