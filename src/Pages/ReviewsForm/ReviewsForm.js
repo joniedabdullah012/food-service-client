@@ -93,12 +93,12 @@ const ReviewsForm = () => {
                     </div>
 
                     :
-                    <>
-                        <h2 className='text-5xl text-orange-400'>Please Log in and add your review</h2>
+                    < div className='m-6 p-5'>
+                        <h2 className='text-3xl text-orange-400'>Please Log in and add your review</h2>
 
-                        <Link to='/login'>Log in</Link>
+                        <Link className=' m-6 font-semibold text-2xl' to='/login'>click Log in</Link>
 
-                    </>
+                    </div>
 
 
 

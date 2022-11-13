@@ -1,10 +1,16 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLoaderData, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/authprovider/AuthProvider';
+import GoogleLogin from '../Google/GoogleLogin';
 import ReviewsForm from '../ReviewsForm/ReviewsForm';
 
 const Login = () => {
+
     const { login } = useContext(AuthContext)
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location.state?.from?.pathname || `/`;
+
 
     const handleLogin = event => {
 
@@ -17,6 +23,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                navigate(from, { replace: true });
 
             })
             .catch(err => console.log(err))
@@ -51,6 +58,7 @@ const Login = () => {
                             <input className="btn btn-primary" type="submit" value="login" />
 
                         </div>
+                        <GoogleLogin></GoogleLogin>
                     </form>
                     <p className='p-5 text-violet-400 font-bold'>Add your Review? please <Link to='/signup'>Sign up</Link></p>
                 </div>

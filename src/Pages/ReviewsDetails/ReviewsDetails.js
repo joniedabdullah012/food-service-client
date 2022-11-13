@@ -2,9 +2,7 @@ import React from 'react';
 import ReviewTable from '../reviewTable/ReviewTable';
 
 const ReviewsDetails = ({ review }) => {
-    console.log(review);
-    const { email, photoUrl, reviewName, textArea } = review;
-    console.log(email, photoUrl, reviewName, textArea);
+
 
 
 
@@ -16,8 +14,8 @@ const ReviewsDetails = ({ review }) => {
                     <tr>
 
                         <th>Name</th>
-                        <th>Job</th>
-                        <th>Favorite Color</th>
+                        <th>Review</th>
+                        <th>Email</th>
                         <th></th>
                     </tr>
 

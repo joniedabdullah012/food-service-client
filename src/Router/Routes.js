@@ -3,7 +3,10 @@ import Edit from "../Pages/Edit/Edit";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Login/Login";
 import MyReviews from "../Pages/MyReviews/MyReviews";
+import PrivateRoute from "../Pages/PrivateRoute/PrivateRoute";
 import Reviews from "../Pages/Reviews/Reviews";
+import ReviewsDetails from "../Pages/ReviewsDetails/ReviewsDetails";
+import ReviewsForm from "../Pages/ReviewsForm/ReviewsForm";
 import Services from "../Pages/Shared/services/Services";
 import ServicesCard from "../Pages/Shared/servicesCard/servicesCard";
 import Signup from "../Pages/signup/Signup";
@@ -42,12 +45,14 @@ const router = createBrowserRouter([
             },
             {
                 path: '/myreviews',
-                element: <MyReviews></MyReviews>
+                element: <PrivateRoute>
+                    <MyReviews></MyReviews>
+                </PrivateRoute>
             },
             {
                 path: '/edit',
                 element: <Edit></Edit>
-            }
+            },
 
 
         ]
