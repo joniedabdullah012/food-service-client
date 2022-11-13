@@ -1,4 +1,5 @@
 
+import { Toaster } from 'react-hot-toast';
 import { RouterProvider } from 'react-router-dom';
 import './App.css';
 import router from './Router/Routes';
@@ -6,6 +7,7 @@ import router from './Router/Routes';
 function App() {
   return (
     <div className='max-w-screen-xl mx-auto' >
+      <Toaster></Toaster>
       <RouterProvider router={router}></RouterProvider>
 
 

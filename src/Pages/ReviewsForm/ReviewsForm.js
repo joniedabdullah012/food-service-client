@@ -63,7 +63,7 @@ const ReviewsForm = () => {
     }
     return (
         <div className='p-5'>
-            <Toaster></Toaster>
+
             <h2 className='text-center text-4xl p-4 text-violet-400'>Please add your review</h2>
             <form onSubmit={handleReviewAdd}>
 

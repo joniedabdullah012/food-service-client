@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../Assest/logo/logo.svg.jpg'
+import { AuthContext } from '../../../context/authprovider/AuthProvider';
 
 
 const Header = () => {
+    const { user } = useContext(AuthContext);
     return (
 
         <div className="navbar h-20 mb-12 pt-12 bg-base-100">
@@ -18,16 +20,25 @@ const Header = () => {
 
             <div className="flex-none">
                 <ul className="menu menu-horizontal p-0">
+
                     <li><Link to='/' className='font-semibold'>Home</Link></li>
-                    <li><Link to='/login' className='font-semibold'>Log in</Link></li>
-                    <li>
-                        <a href='/' className='font-semibold'>
-                            Parent
 
-                        </a>
 
-                    </li>
-                    <li><a href='/' className='font-semibold'>Item 3</a></li>
+                    {
+                        user?.email ?
+                            <>
+                                <li><Link to='/myreviews' className='font-semibold'>My Reviews</Link></li>
+                                <li><Link to='/addservice' className='font-semibold'>Add Service</Link></li>
+                                <li><Link to='/myreviews' className='font-semibold'>Log Out</Link></li>
+
+
+
+                            </>
+                            :
+                            <li><Link to='/login' className='font-semibold'>Log in</Link></li>
+
+                    }
+
                 </ul>
             </div>
         </div>

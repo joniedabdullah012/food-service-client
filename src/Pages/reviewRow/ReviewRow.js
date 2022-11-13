@@ -1,13 +1,15 @@
 import React from 'react';
 
-const ReviewRow = ({ review }) => {
-    const { reviewName, photoUrl, textArea } = review;
-    console.log(reviewName, photoUrl, textArea);
+const ReviewRow = ({ review, handleDelete }) => {
+    const { _id, reviewName, photoUrl, textArea } = review;
+
+
+
     return (
         <tr>
             <th>
                 <label>
-                    <button className='btn btn-ghost btn-xs'>Delete</button>
+                    <button onClick={() => handleDelete(_id)} className='btn btn-ghost btn-xs'>Delete</button>
                 </label>
             </th>
             <td>
