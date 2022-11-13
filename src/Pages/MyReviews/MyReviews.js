@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/authprovider/AuthProvider';
 import ReviewRow from '../reviewRow/ReviewRow';
 import Reviews from '../Reviews/Reviews';
@@ -38,6 +39,28 @@ const MyReviews = () => {
         }
 
     }
+    const handleUpdate = id => {
+        fetch(`http://localhost:5000/myreviews/${id}`, {
+            method: 'PATCH',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({ status: 'Update' })
+
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.modifiedCount > 0) {
+                    const remaining = reviews.filter(rev => rev._id !== id)
+                    const edit = reviews.find(rev => rev._id === id)
+                    edit.status = ('update')
+                    const newReview = [...remaining, edit]
+                    setReviews(newReview)
+                }
+            })
+    }
+
 
     return (
         <div>
@@ -65,6 +88,7 @@ const MyReviews = () => {
                                 key={review._id}
                                 review={review}
                                 handleDelete={handleDelete}
+                                handleUpdate={handleUpdate}
 
 
                             ></ReviewRow>)

@@ -1,4 +1,5 @@
 import Main from "../Layout/Main";
+import Edit from "../Pages/Edit/Edit";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Login/Login";
 import MyReviews from "../Pages/MyReviews/MyReviews";
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
             {
                 path: '/myreviews',
                 element: <MyReviews></MyReviews>
+            },
+            {
+                path: '/edit',
+                element: <Edit></Edit>
             }
 
 

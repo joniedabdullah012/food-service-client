@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const ReviewRow = ({ review, handleDelete }) => {
-    const { _id, reviewName, photoUrl, textArea } = review;
+const ReviewRow = ({ review, handleDelete, handleUpdate }) => {
+    const { _id, reviewName, photoUrl, textArea, status, } = review;
 
 
 
@@ -31,7 +32,7 @@ const ReviewRow = ({ review, handleDelete }) => {
             </td>
 
             <th>
-                <button className="btn btn-ghost btn-xs">Edit</button>
+                <button onClick={() => handleUpdate(_id)} className="btn btn-ghost btn-xs">{status ? status : 'Edit'}</button>
             </th>
         </tr>
 
