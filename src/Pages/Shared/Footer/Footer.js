@@ -3,7 +3,7 @@ import logo from '../../../Assest/logo/logo.svg.jpg'
 
 const Footer = () => {
     return (
-        <footer className="  footer p-10 bg-neutral text-neutral-content">
+        <footer className=" m-10 footer p-10 bg-neutral text-neutral-content">
             <div>
                 <img className='w-40 rounded-full ' src={logo} alt=''></img>
 
