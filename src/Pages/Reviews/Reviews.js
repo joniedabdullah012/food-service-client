@@ -1,6 +1,7 @@
 
 import { useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import useTitle from '../../Hooks/useTitle';
 import ReviewsDetails from '../ReviewsDetails/ReviewsDetails';
 import ReviewsForm from '../ReviewsForm/ReviewsForm';
 
@@ -9,6 +10,7 @@ import ReviewsForm from '../ReviewsForm/ReviewsForm';
 
 
 const Reviews = () => {
+    useTitle('Details-reviews')
     const { _id, title, img, description, price } = useLoaderData()
 
     const [reviews, setReviews] = useState([]);

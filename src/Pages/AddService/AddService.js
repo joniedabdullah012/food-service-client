@@ -1,6 +1,8 @@
 import React from 'react';
+import useTitle from '../../Hooks/useTitle';
 
 const AddService = () => {
+    useTitle('Add-service')
 
     const handleAddService = () => {
 
@@ -11,6 +13,8 @@ const AddService = () => {
 
             <h2 className='text-center text-4xl p-4 text-orange-400'>Add Service</h2>
             <form onSubmit={handleAddService}>
+
+
 
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-5'>
                     <input name="name" type="text" placeholder="Service Name" className="input input-bordered w-full " required />

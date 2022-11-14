@@ -1,10 +1,12 @@
 import React, { useContext } from 'react';
 import { Link, useLoaderData, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/authprovider/AuthProvider';
+import useTitle from '../../Hooks/useTitle';
 import GoogleLogin from '../Google/GoogleLogin';
 import ReviewsForm from '../ReviewsForm/ReviewsForm';
 
 const Login = () => {
+    useTitle('Log-In')
 
     const { login } = useContext(AuthContext)
     const location = useLocation();
