@@ -25,8 +25,8 @@ const Header = () => {
 
             </div>
 
-            <div className="flex-none">
-                <ul className="menu menu-horizontal p-0">
+            <div className="flex-none dropdown">
+                <ul className="menu menu-horizontal p-0 ">
 
                     <li><Link to='/' className='font-semibold'>Home</Link></li>
 
@@ -45,6 +45,9 @@ const Header = () => {
                             <li><Link to='/login' className='font-semibold'>Log in</Link></li>
 
                     }
+
+                    <li><Link to='/blog' className='font-semibold'> Blog</Link></li>
+
 
                 </ul>
             </div>
