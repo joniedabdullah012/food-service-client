@@ -36,7 +36,7 @@ const ReviewsForm = () => {
 
 
 
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://food-services-server.vercel.app/reviews', {
 
             method: 'POST',
             headers: {

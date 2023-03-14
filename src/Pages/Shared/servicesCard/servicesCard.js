@@ -15,7 +15,7 @@ const ServicesCard = ({ service }) => {
             <PhotoProvider>
                 <figure>
                     <PhotoView src={img}>
-                        <img className='w-64 h-32' src={img} alt="Shoes" />
+                        <img className='rounded-2xl w-64 h-32' src={img} alt="Shoes" />
 
                     </PhotoView>
 

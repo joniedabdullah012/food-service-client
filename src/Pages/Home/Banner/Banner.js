@@ -6,7 +6,7 @@ import logo2 from '../../../Assest/Banner/bannnerTMG2.svg.jpg';
 const Banner = () => {
     return (
         <div>
-            <div className="carousel w-full h-80">
+            <div className="carousel rounded-2xl m-10 h-80">
                 <div id="item1" className="carousel-item w-full">
                     <img alt='' src={logo1} className="w-full" />
                 </div>

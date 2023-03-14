@@ -5,7 +5,7 @@ import ServicesCard from '../../../Shared/servicesCard/servicesCard';
 const HomeServices = () => {
     const [services, setServices] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/homeservices')
+        fetch('https://food-services-server.vercel.app/homeservices')
             .then(res => res.json())
             .then(data => setServices(data))
     })

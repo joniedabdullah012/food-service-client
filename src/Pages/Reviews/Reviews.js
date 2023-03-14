@@ -16,7 +16,7 @@ const Reviews = () => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/myreviews')
+        fetch('https://food-services-server.vercel.app/myreviews')
             .then(res => res.json())
             .then(data => {
                 setReviews(data)
